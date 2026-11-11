@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Карпати без клопоту — короткі групові подорожі Українськими Карпатами на 2–4 дні.">
+<title>Бронювання | Карпати без клопоту</title><link rel="icon" href="images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div class="topbar"><div class="container"><span>🌿 Подорожуй Карпатами — про організацію подбаємо ми</span><span>Чернігів · Київ · Львів</span></div></div>
+<div class="nav-wrap"><div class="container nav">
+<a class="brand" href="index.html"><span class="brand-mark">↟</span><span>КАРПАТИ<br>БЕЗ КЛОПОТУ</span></a>
+<button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false">☰</button>
+<nav class="nav-links"><a class="" href="index.html">Головна</a><a class="" href="tours.html">Наші тури</a><a class="" href="about.html">Про нас</a><a class="" href="contacts.html">Контакти</a></nav>
+<a class="btn btn-primary" href="booking.html">Забронювати ↗</a>
+</div></div>
+<main><section class="page-hero"><div class="container"><span class="eyebrow">Твоя подорож починається із заявки</span><h1>Забронюй місце<br>у своїй пригоді.</h1><p class="intro">Заповни форму — заявка відкриється у твоїй поштовій програмі. Ми зможемо уточнити доступність, остаточну вартість і всі деталі до підтвердження бронювання.</p></div></section>
+<section class="section" style="padding-top:15px"><div class="container booking-layout"><aside class="booking-aside"><span class="eyebrow" style="color:var(--lime)">Перед відправленням</span><h2 style="font:700 1.8rem Unbounded;letter-spacing:-.06em">Кілька важливих деталей</h2><p>Заявка не є автоматичним підтвердженням бронювання. Після отримання звернення потрібно узгодити наявність місць, програму, остаточну ціну, порядок оплати та умови скасування.</p><hr style="border:0;border-top:1px solid rgba(255,255,255,.2);margin:22px 0"><p><b>Організаційна база</b><br>Чернігів</p><p><b>Можливі точки збору</b><br>Київ · Львів</p><p><b>Контакт</b><br><a href="mailto:dasanavozenko@gmail.com" style="color:var(--lime)">dasanavozenko@gmail.com</a></p></aside>
+<form class="booking-form" id="booking-form"><h2 style="font:700 1.6rem Unbounded;margin:0 0 22px">Дані для заявки</h2><div class="form-grid">
+<div class="field full"><label for="tour">Оберіть тур *</label><select id="tour" name="tour" required><option value="Карпати на вихідні — 2 дні" data-price="0">Карпати на вихідні — 2 дні (ціна за запитом)</option><option value="Карпати без поспіху — 3 дні" data-price="7000" selected>Карпати без поспіху — 3 дні (7 000 грн, модельна ціна)</option><option value="Карпати: більше вражень — 4 дні" data-price="0">Карпати: більше вражень — 4 дні (ціна за запитом)</option></select></div>
+<div class="field"><label for="date">Бажана дата *</label><input id="date" name="date" type="date" required></div><div class="field"><label for="people">Кількість учасників *</label><input id="people" name="people" type="number" min="1" max="12" value="2" required></div>
+<div class="field full"><label for="departure">Бажана точка збору *</label><select id="departure" name="departure" required><option>Чернігів</option><option>Київ</option><option>Львів</option><option>Інше (уточнити в коментарі)</option></select></div>
+<div class="field"><label for="name">Ваше ім'я *</label><input id="name" name="name" autocomplete="name" required placeholder="Як до вас звертатися?"></div><div class="field"><label for="phone">Телефон *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+380..."></div>
+<div class="field full"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com"></div>
+<div class="field full"><label for="message">Коментар або побажання</label><textarea id="message" name="message" placeholder="Наприклад, питання щодо маршруту чи точки збору"></textarea></div>
+<div class="field full"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#f3f8e9;padding:15px;border-radius:14px"><span><b>Орієнтовна сума за обраним тарифом</b><br><span class="form-hint">Не є рахунком або підтвердженням вартості</span></span><span style="font:700 1.1rem Unbounded;color:var(--green)" data-total>14 000 грн</span></div><span class="form-hint">Ціна за особу: <b data-price>7 000 грн / особа</b>. Для 4-денного туру вартість уточнюється.</span></div>
+<div class="field full"><button class="btn btn-primary" type="submit">Підготувати заявку ↗</button><p class="form-hint">Натискаючи кнопку, ти відкриваєш поштову програму з підготовленим листом. Дані не надсилаються автоматично й не зберігаються на цьому сайті.</p><p id="form-status" role="status" class="small-note"></p></div>
+</div></form></div></section></main>
+<script>
+const params=new URLSearchParams(location.search);const chosen=params.get('tour');const map={weekend:'Карпати на вихідні — 2 дні',slow:'Карпати без поспіху — 3 дні',more:'Карпати: більше вражень — 4 дні'};if(chosen&&map[chosen]){const s=document.querySelector('#tour');[...s.options].forEach(o=>{if(o.value===map[chosen])s.value=o.value});}
+</script>
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><a class="brand" href="index.html"><span class="brand-mark">↟</span><span>КАРПАТИ<br>БЕЗ КЛОПОТУ</span></a><p style="max-width:330px">Короткі подорожі Українськими Карпатами з продуманою програмою, зрозумілими умовами та підтримкою організатора.</p></div>
+<div><h4>НАВІГАЦІЯ</h4><div class="footer-links"><a href="index.html">Головна</a><a href="tours.html">Наші тури</a><a href="about.html">Про нас</a><a href="contacts.html">Контакти</a><a href="booking.html">Бронювання</a></div></div>
+<div><h4>ЗВ'ЯЗОК</h4><div class="footer-links"><a href="mailto:dasanavozenko@gmail.com">dasanavozenko@gmail.com</a><span>Організаційна база: Чернігів</span><span>Можливі точки збору: Київ, Львів</span></div></div>
+</div>
+<div class="footer-bottom"><span>© <span data-year>2026</span> Карпати без клопоту. Усі права захищені.</span><span class="footer-credit">Сайт розроблено Дар'я Навозенко © 2026 · <a class="footer-credit" href="mailto:dasanavozenko@gmail.com">dasanavozenko@gmail.com</a></span></div>
+</div></footer><script src="js/script.js"></script></body></html>
